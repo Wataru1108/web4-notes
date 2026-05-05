@@ -69,8 +69,7 @@
   </li>
 
   <li>
-<a href="./web4_madman_report.md">
-  Web4.0 = Death of Internet (JP / Report)
+<a href="?file=web4_madman_report.md">  Web4.0 = Death of Internet (JP / Report)
     </a>
   </li>
 
@@ -80,6 +79,23 @@
     </a>
   </li>
 </ul>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
+
+if (file) {
+  fetch(file)
+    .then(res => res.text())
+    .then(md => {
+      document.body.innerHTML = `
+        <div style="max-width:720px;margin:60px auto;padding:0 20px;line-height:1.8;">
+          ${marked.parse(md)}
+        </div>
+      `;
+    });
+}
+</script>
 </body>
 </html>
