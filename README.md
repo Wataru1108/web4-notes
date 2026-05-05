@@ -1,4 +1,4 @@
-# Web4 Notes
+# Web4 and Jornalism Notes
 
 Working note.
 
